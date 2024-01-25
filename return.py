@@ -2,10 +2,11 @@
 import pandas as pd
 import os
 
-# Convert CSV into DataFrame
+# Get the last file uploaded
 directory_path = "static/files/"
 most_recent_file = None
 most_recent_time = 0
+csv_path = None
 
 for entry in os.scandir(
     directory_path
@@ -18,8 +19,14 @@ for entry in os.scandir(
             most_recent_file = entry.name
             most_recent_time = mod_time
 
-df = pd.read_csv(directory_path + most_recent_file)
+csv_path = directory_path + most_recent_file
+
+# Convert CSV into DataFrame
+df = pd.read_csv(csv_path)
 print(df.to_string())
+
+# Delete file after upload
+os.remove(csv_path)
 
 # Parse float from string and turn into US decimal points(.)
 df["Getiri (%)"] = pd.to_numeric(df["Getiri (%)"].str.replace(",", "."))
