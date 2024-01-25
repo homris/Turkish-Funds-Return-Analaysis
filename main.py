@@ -4,6 +4,7 @@ from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
 from wtforms.validators import InputRequired
+from return_befas import *
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "supersecretkey"
@@ -28,8 +29,8 @@ def home():
                 secure_filename(file.filename),
             )
         )  # Then save the file
-        return "File has been uploaded."
-    return render_template("index.html", form=form)
+        return "ok"
+    return render_template("main.html", form=form)
 
 
 if __name__ == "__main__":

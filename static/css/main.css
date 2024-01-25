@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+:root {
+    --text-color: #3CDFFF;
+    --bg-color: aliceblue;
+}
+
+* {
+    margin: 0;
+    text-align: center;
+    background-color: #0D0630;
+    color: var(--text-color);
+    font-family: 'Paytone One', sans-serif;
+}
+
+#creator {
+    position: absolute;
+    bottom: 2px;
+    font-size: 1rem;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+.main {
+    border: 1px solid white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 200px 100px;
+    position: relative;
+}
+
+#file::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+#file::before {
+    content: 'Dosya Seç';
+    display: inline-block;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#submit {
+    border: 0;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: var(--bg-color);
+    min-height: 40px;
+    width: auto;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+i {
+    background-color: var(--bg-color);
+}

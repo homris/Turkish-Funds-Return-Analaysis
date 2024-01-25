@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEFAS Fon Analizi</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/main.css') }}"
+    />
+    <script
+      src="https://kit.fontawesome.com/6bf94bc396.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="main">
+      <h2>CSV Dosyasını Yükle</h2>
+      <!-- <input
+          class="custom-file-input"
+          id="file"
+          type="file"
+          name="file"
+          placeholder="hello"
+        />
+        <button><i class="fa-solid fa-file-arrow-up"></i> Upload</button>
+      -->
+      <div>{{form.hidden_tag()}} {{form.file()}} {{form.submit()}}</div>
+      <div id="creator">Made By Metehan Homriş</div>
+    </section>
+  </body>
+</html>
