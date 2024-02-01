@@ -8,16 +8,20 @@ most_recent_file = None
 most_recent_time = 0
 csv_path = "static/default/01.01.2023-02.01.2024-başlangıç.csv"
 
-for entry in os.scandir(
-    directory_path
-):  # iterate over the files in the directory using os.scandir https://jacobnarayan.com/blogs/how-to-find-the-most-recent-file-in-a-directory-in-python
-    if entry.is_file():
-        # get the modification time of the file using entry.stat().st_mtime_ns
-        mod_time = entry.stat().st_mtime_ns
-        if mod_time > most_recent_time:
-            # update the most recent file and its modification time
-            most_recent_file = entry.name
-            most_recent_time = mod_time
+try:
+    for entry in os.scandir(
+        directory_path
+    ):  # iterate over the files in the directory using os.scandir https://jacobnarayan.com/blogs/how-to-find-the-most-recent-file-in-a-directory-in-python
+        if entry.is_file():
+            # get the modification time of the file using entry.stat().st_mtime_ns
+            mod_time = entry.stat().st_mtime_ns
+            if mod_time > most_recent_time:
+                # update the most recent file and its modification time
+                most_recent_file = entry.name
+                most_recent_time = mod_time
+
+except:
+    print("no files in directory")
 
 if most_recent_file == None:
     None
