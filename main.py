@@ -29,7 +29,7 @@ def home():
                 secure_filename(file.filename),
             )
         )  # Then save the file
-        return "ok"
+        return "File has been uploaded."
     return render_template("main.html", form=form)
 
 

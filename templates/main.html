@@ -26,7 +26,9 @@
         />
         <button><i class="fa-solid fa-file-arrow-up"></i> Upload</button>
       -->
-      <div>{{form.hidden_tag()}} {{form.file()}} {{form.submit()}}</div>
+      <form method="POST" enctype="multipart/form-data">
+        {{form.hidden_tag()}} {{form.file()}} {{form.submit()}}
+      </form>
       <div id="creator">Made By Metehan Homriş</div>
     </section>
   </body>
